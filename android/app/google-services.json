@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "867852799588",
+    "project_id": "fir-flutter-login-56739",
+    "storage_bucket": "fir-flutter-login-56739.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867852799588:android:0da9e841c29b4188c65971",
+        "android_client_info": {
+          "package_name": "com.gideon.demo_getx_supabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "867852799588-96jgclrdepldmoattcf5uangl5l3cr7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiM_xiFiaqCE-2jv2qweE2mNLMBWABHSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "867852799588-96jgclrdepldmoattcf5uangl5l3cr7c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

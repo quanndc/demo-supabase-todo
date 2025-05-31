@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
+import '../../../models/theme_model.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
@@ -14,54 +16,21 @@ class ProfileView extends GetView<ProfileController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Card(
-          color: Colors.blue,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          elevation: 10,
-          shadowColor: Colors.black,
-
-          margin: const EdgeInsets.all(20),
-          child: Container(
-            width: 300,
-            height: 200,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Obx(
-                  () => Text(
-                    controller.name.value,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                Obx(
-                  () => Text(
-                    controller.count.value.toString(),
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    controller.increment();
-                  },
-                  child: const Text('Increment'),
-                ),
-              ],
-            ),
-          ),
-        )
+        child: FilledButton.icon(
+          onPressed: () async {
+            // await controller.logout();
+          },
+          icon: const Icon(Icons.logout),
+          label: const Text("Logout"),
+        ),
       ),
-    );
+      floatingActionButton: Obx(() =>
+          Switch(
+              value: controller.isDarkTheme.value,
+              onChanged: (value) async {
+                  await controller.toggleTheme(value);
+                  Provider.of<ThemeModel>(context, listen: false).toggleTheme(controller.isDarkTheme.value);
+              })
+      ));
   }
 }
